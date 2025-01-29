@@ -178,14 +178,14 @@ GROUP BY b.isbn, b.book_title;
 
 The following SQL queries were used to address specific questions:
 
-Task 7. **Retrieve All Books in a Specific Category**:
+**Task 7. Retrieve All Books in a Specific Category**:
 
 ```sql
 SELECT * FROM books
 WHERE category = 'Classic';
 ```
 
-8. **Task 8: Find Total Rental Income by Category**:
+ **Task 8: Find Total Rental Income by Category**:
 
 ```sql
 SELECT 
@@ -200,7 +200,7 @@ ON b.isbn = ist.issued_book_isbn
 GROUP BY 1
 ```
 
-9. **List Employees with Their Branch Manager's Name and their branch details**:
+**Task 9. List Employees with Their Branch Manager's Name and their branch details**:
 
 ```sql
 SELECT 
@@ -219,14 +219,14 @@ employees as e2
 ON e2.emp_id = b.manager_id
 ```
 
-Task 10. **Create a Table of Books with Rental Price Above a Certain Threshold**:
+**Task 10. Create a Table of Books with Rental Price Above a Certain Threshold**:
 ```sql
 CREATE TABLE expensive_books AS
 SELECT * FROM books
 WHERE rental_price > 7.00;
 ```
 
-Task 11: **Retrieve the List of Books Not Yet Returned**
+**Task 11: Retrieve the List of Books Not Yet Returned**
 ```sql
 SELECT * FROM issued_status as ist
 LEFT JOIN
@@ -237,7 +237,7 @@ WHERE rs.return_id IS NULL;
 
 ## Advanced SQL Operations
 
-**Task 13: Identify Members with Overdue Books**  
+**Task 12: Identify Members with Overdue Books**  
 Write a query to identify members who have overdue books (assume a 30-day return period). Display the member's_id, member's name, book title, issue date, and days overdue.
 
 ```sql
@@ -266,7 +266,7 @@ ORDER BY 1
 ```
 
 
-**Task 14: Update Book Status on Return**  
+**Task 13: Update Book Status on Return**  
 Write a query to update the status of books in the books table to "Yes" when they are returned (based on entries in the return_status table).
 
 
@@ -302,7 +302,7 @@ WHERE issued_id = 'IS130';
 
 
 
-**Task 15: Branch Performance Report**  
+**Task 14: Branch Performance Report**  
 Create a query that generates a performance report for each branch, showing the number of books issued, the number of books returned, and the total revenue generated from book rentals.
 
 ```sql
@@ -332,10 +332,10 @@ GROUP BY 1, 2;
 SELECT * FROM branch_reports;
 ```
 
-**Task 16: Find Employees with the Most Book Issues Processed**  
+**Task 15: Find Employees with the Most Book Issues Processed**  
 Write a query to find the top 3 employees who have processed the most book issues. Display the employee name, number of books processed, and their branch.
 
-```sql
+```SQL
 SELECT 
     e.emp_name,
     b.*,
